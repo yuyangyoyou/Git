@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>site cache problem</title>
+        <!-- 1.add meta -->
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+        <!-- 2.add version number -->
+        <link rel="stylesheet" href="css/index.css?version=20210224">
+        <!-- 3.use js to add time number -->
+        <script>
+            document.write('<link rel="stylesheet" href="css/xxx.css?t=' + new Date().getTime() + '">');
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            document.write('<script src="js/xxx.js?t=' + (new Date()).getTime() + '"><\/script>');
+        </script>
+    </body>
+</html>
